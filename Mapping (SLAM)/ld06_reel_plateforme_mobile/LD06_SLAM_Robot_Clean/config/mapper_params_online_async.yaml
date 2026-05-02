@@ -1,0 +1,77 @@
+# SLAM Toolbox Configuration for LD06 LiDAR
+# Online Async Mode - Real-time mapping while moving
+
+slam_toolbox:
+  ros__parameters:
+    
+    # Plugin Configuration
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+    
+    # ROS Parameters
+    use_sim_time: false
+    mode: mapping  # localization or mapping
+    
+    # Map Management
+    # map_file_name: /tmp/slam_map  # Only set when loading a previous map
+    map_start_pose: [0.0, 0.0, 0.0]
+    map_start_at_dock: false
+    
+    # Solver Parameters
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+    
+    # SLAM Parameters
+    debug_logging: false
+    throttle_scans: 1
+    transform_publish_period: 0.02  # 50 Hz for smooth TF
+    map_update_interval: 5.0
+    resolution: 0.05  # 5cm resolution
+    max_laser_range: 20.0  # Increased to handle long corridors
+    minimum_time_interval: 0.5
+    transform_timeout: 0.5
+    tf_buffer_duration: 30.0
+    stack_size_to_use: 40000000
+    enable_interactive_mode: true
+    
+    # General Parameters
+    use_scan_matching: true
+    use_scan_barycenter: true
+    minimum_travel_distance: 0.05  # 5cm - more frequent updates for better tracking
+    minimum_travel_heading: 0.05   # ~3 degrees - more sensitive to rotation
+    scan_buffer_size: 10
+    scan_buffer_maximum_scan_distance: 10.0
+    link_match_minimum_response_fine: 0.2  # Higher threshold = trust scan matching more
+    link_scan_maximum_distance: 2.0  # Increased search radius for scan matching
+    loop_search_maximum_distance: 4.0  # Larger loop closure search
+    do_loop_closing: true
+    loop_match_minimum_chain_size: 5  # Less strict for loop closure
+    loop_match_maximum_variance_coarse: 5.0  # More tolerant to odometry drift
+    loop_match_minimum_response_coarse: 0.25  # Lower threshold
+    loop_match_minimum_response_fine: 0.35  # Lower threshold
+    
+    # Correlation Parameters
+    correlation_search_space_dimension: 0.5
+    correlation_search_space_resolution: 0.01
+    correlation_search_space_smear_deviation: 0.1
+    
+    # Loop Closure Parameters
+    loop_search_space_dimension: 8.0
+    loop_search_space_resolution: 0.05
+    loop_search_space_smear_deviation: 0.03
+    
+    # Scan Matcher Parameters
+    distance_variance_penalty: 0.3  # Lower = trust odometry less
+    angle_variance_penalty: 0.5  # Lower = trust odometry rotation less
+    fine_search_angle_offset: 0.0174  # 1 degree - wider search
+    coarse_search_angle_offset: 0.524  # 30 degrees - much wider for bad odometry
+    coarse_angle_resolution: 0.0524    # 3 degrees - finer resolution
+    minimum_angle_penalty: 0.7  # Lower = more tolerant
+    minimum_distance_penalty: 0.3  # Lower = more tolerant
+    use_response_expansion: true

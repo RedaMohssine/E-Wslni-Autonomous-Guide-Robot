@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<!--
+  Robot URDF Description
+  ======================
+  Octagonal base robot with LD06 LiDAR
+  
+  Dimensions:
+    - Height:               520mm (0.52m)
+    - Octagonal base:       255mm per side, 615.62mm flat-to-flat
+    - Wheel track (between wheels): 488mm (0.488m)
+    - LiDAR height:         mounted on top (z = 0.52m from ground)
+    - Wheel diameter:       65mm (0.065m), width ~26mm
+-->
+<robot name="slam_robot">
+
+  <!-- ============================================================ -->
+  <!--  BASE FOOTPRINT (ground projection)                          -->
+  <!-- ============================================================ -->
+  <link name="base_footprint"/>
+
+  <joint name="base_footprint_to_base_link" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <!-- base_link is at wheel axle height = wheel_radius = 0.0325m -->
+    <origin xyz="0 0 0.0325" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--  BASE LINK (octagonal body)                                  -->
+  <!-- ============================================================ -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.2275" rpy="0 0 0"/>
+      <!-- Approximate octagon as a cylinder with circumradius ~0.308m -->
+      <geometry>
+        <cylinder radius="0.30781" length="0.455"/>
+      </geometry>
+      <material name="chassis_grey">
+        <color rgba="0.4 0.4 0.4 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.2275" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.30781" length="0.455"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.2275" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0"
+               iyy="0.1" iyz="0"
+               izz="0.1"/>
+    </inertial>
+  </link>
+
+  <!-- ============================================================ -->
+  <!--  LEFT WHEEL                                                  -->
+  <!-- ============================================================ -->
+  <link name="left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.0325" length="0.026"/>
+      </geometry>
+      <material name="wheel_black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.0325" length="0.026"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.2"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0"
+               iyy="0.0001" iyz="0"
+               izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <!-- Wheel at axle height (base_link origin), offset left by half track width -->
+    <origin xyz="0 0.244 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--  RIGHT WHEEL                                                 -->
+  <!-- ============================================================ -->
+  <link name="right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.0325" length="0.026"/>
+      </geometry>
+      <material name="wheel_black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.0325" length="0.026"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.2"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0"
+               iyy="0.0001" iyz="0"
+               izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <!-- Wheel at axle height (base_link origin), offset right by half track width -->
+    <origin xyz="0 -0.244 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--  FRONT CASTER (for stability, simplified)                    -->
+  <!-- ============================================================ -->
+  <link name="front_caster">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0325"/>
+      </geometry>
+      <material name="caster_grey">
+        <color rgba="0.3 0.3 0.3 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.0325"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0"
+               iyy="0.00001" iyz="0"
+               izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="front_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_caster"/>
+    <!-- Caster at front of robot, at ground contact level (same as wheels) -->
+    <origin xyz="0.20 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ============================================================ -->
+  <!--  LD06 LiDAR                                                  -->
+  <!-- ============================================================ -->
+  <link name="base_laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.04"/>
+      </geometry>
+      <material name="lidar_blue">
+        <color rgba="0.0 0.3 0.8 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.035" length="0.04"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0"
+               iyy="0.00001" iyz="0"
+               izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <joint name="base_link_to_base_laser" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_laser"/>
+    <!-- LiDAR on top of the robot: height 520mm - 32.5mm(wheel axle) = 487.5mm above base_link -->
+    <!-- Rotated -90° yaw to align LiDAR forward with robot forward -->
+    <origin xyz="0 0 0.4875" rpy="0 0 -1.5708"/>
+  </joint>
+
+</robot>

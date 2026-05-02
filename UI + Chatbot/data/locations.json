@@ -1,0 +1,531 @@
+[
+  {
+    "location_name": "Station de Recharge",
+    "category": "Autre",
+    "aliases": [
+      "Robot Station",
+      "Recharge",
+      "Station de recharge robot",
+      "Charging Station",
+      "Robot Charging Station",
+      "Robot home base",
+      "borne de recharge",
+      "dock",
+      "docking station",
+      "charging dock",
+      "robot dock",
+      "محطة الشحن",
+      "نقطة الشحن"
+    ],
+    "description": "Station de recharge pour le robot assistant, située à proximité du forum pour un accès facile.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 40.7128,
+      "longitude": -74.006
+    }
+  },
+  {
+    "location_name": "Accueil",
+    "category": "Administratif",
+    "aliases": [
+      "reception",
+      "réception",
+      "accueil principal",
+      "information",
+      "front desk",
+      "help desk",
+      "welcome desk",
+      "reception hall",
+      "lobby",
+      "entrance",
+      "entrée",
+      "hall d'entrée",
+      "réceptionniste",
+      "receptionniste",
+      "الاستقبال",
+      "مدخل"
+    ],
+    "description": "Accueil principal de l'école pour les visiteurs et les étudiants.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 125,
+      "longitude": 50
+    }
+  },
+  {
+    "location_name": "Bureau du directeur",
+    "category": "Administratif",
+    "aliases": [
+      "direction",
+      "directeur",
+      "director",
+      "head office",
+      "principal",
+      "bureau directeur",
+      "directeur d'EMINES",
+      "Nicolas Cheimanoff",
+      "Cheimanoff",
+      "Monsieur Cheimanoff",
+      "Mr Cheimanoff",
+      "M. Cheimanoff",
+      "director office",
+      "director's office",
+      "office of the director",
+      "مكتب المدير",
+      "المدير"
+    ],
+    "description": "Bureau du directeur de l'EMINES.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 111,
+      "longitude": 33
+    }
+  },
+  {
+    "location_name": "Bureau d'assistante du directeur",
+    "category": "Administratif",
+    "aliases": [
+      "assistante du directeur",
+      "assistante directeur",
+      "bureau assistante",
+      "secrétariat directeur",
+      "secretariat directeur",
+      "secretary",
+      "director's assistant",
+      "Khadija",
+      "Khadija Ait Heddouche",
+      "Ait Heddouche",
+      "aide financière",
+      "aide financiere",
+      "bourses",
+      "financement",
+      "financial aid",
+      "scholarships",
+      "finance office",
+      "مكتب مساعدة المدير",
+      "خديجة",
+      "المساعدة المالية",
+      "المنح"
+    ],
+    "description": "Bureau de l'assistante du directeur, en charge de l'aide financière, des bourses et de l'accompagnement administratif des étudiants.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 111,
+      "longitude": 34
+    }
+  },
+  {
+    "location_name": "Bureau responsable des affaires externes",
+    "category": "Administratif",
+    "aliases": [
+      "affaires externes",
+      "relations internationales",
+      "partenariats",
+      "external affairs",
+      "international affairs",
+      "external relations",
+      "partnerships",
+      "Meryem Maataoui",
+      "Meriem Maataoui"
+    ],
+    "description": "Bureau du responsable des affaires externes, des relations internationales et des partenariats.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 104.37,
+      "longitude": 37.2
+    }
+  },
+  {
+    "location_name": "Bureau responsable communication",
+    "category": "Administratif",
+    "aliases": [
+      "communication",
+      "comm",
+      "communication office",
+      "media office",
+      "press",
+      "press office",
+      "public relations",
+      "relations publiques",
+      "PR",
+      "marketing",
+      "Saad",
+      "Saad Khettab",
+      "Khettab",
+      "saad khettab",
+      "مكتب الاتصال",
+      "الاتصالات",
+      "العلاقات العامة",
+      "سعد",
+      "سعد خطاب"
+    ],
+    "description": "Bureau du responsable de la communication, des relations publiques et de la présence médiatique de l'EMINES.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 105,
+      "longitude": 32.7
+    }
+  },
+  {
+    "location_name": "Bureau responsable scolarité",
+    "category": "Administratif",
+    "aliases": [
+      "scolarité",
+      "scolarite",
+      "responsable scolarité",
+      "responsable scolarite",
+      "academic affairs",
+      "academic office",
+      "registrar",
+      "school office",
+      "student affairs",
+      "vie étudiante",
+      "vie etudiante",
+      "affaires étudiantes",
+      "affaires etudiantes",
+      "Nouhaila Bamoussa",
+      "Bamoussa",
+      "Nouhaila",
+      "إدارة شؤون الطلاب",
+      "مكتب الدراسة",
+      "نهيلة",
+      "نهيلة باموسى"
+    ],
+    "description": "Bureau du responsable de la scolarité, en charge de l'accompagnement académique des étudiants.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 81.4,
+      "longitude": 32.3
+    }
+  },
+  {
+    "location_name": "Bureau d'Ordre",
+    "category": "Services",
+    "aliases": [
+      "courrier",
+      "bureau ordre",
+      "commandes",
+      "courier office",
+      "mail",
+      "mail room",
+      "mailroom",
+      "réception courrier",
+      "delivery office",
+      "package",
+      "packages",
+      "colis",
+      "البريد",
+      "الطرود",
+      "مكتب البريد"
+    ],
+    "description": "Le bureau d'ordre gère la réception et la distribution du courrier et des colis pour les étudiants et le personnel de l'école.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 125,
+      "longitude": 50
+    }
+  },
+  {
+    "location_name": "Health Center",
+    "category": "Santé",
+    "aliases": [
+      "sante",
+      "santé",
+      "medical",
+      "infirmerie",
+      "centre medical",
+      "centre médical",
+      "health center",
+      "medical center",
+      "clinic",
+      "centre de santé",
+      "centre de sante",
+      "doctor",
+      "docteur",
+      "nurse",
+      "infirmier",
+      "infirmière",
+      "first aid",
+      "premiers secours",
+      "العيادة",
+      "المركز الصحي",
+      "الصحة",
+      "الطبيب",
+      "الإسعاف"
+    ],
+    "description": "Services médicaux et counselling santé pour les étudiants et le personnel.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 17.5,
+      "longitude": 7.8
+    }
+  },
+  {
+    "location_name": "Laboratoire de Physique Expérimentale",
+    "category": "Laboratoire",
+    "aliases": [
+      "lab physique",
+      "labo physique",
+      "physique experimentale",
+      "physique expérimentale",
+      "laboratoire pe",
+      "labo pe",
+      "physics lab",
+      "physics laboratory",
+      "experimental physics",
+      "physics",
+      "physique",
+      "مختبر الفيزياء",
+      "فيزياء"
+    ],
+    "description": "Laboratoire dédié aux expériences pratiques et démonstrations en physique.",
+    "building": "Bâtiment des Sciences",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 46.2,
+      "longitude": 23.4
+    }
+  },
+  {
+    "location_name": "Laboratoire de Projet d'Ingénierie",
+    "category": "Laboratoire",
+    "aliases": [
+      "projet ingenierie",
+      "projet ingénierie",
+      "laboratoire pi",
+      "labo pi",
+      "lab ingenierie",
+      "labo ingénierie",
+      "engineering project",
+      "project lab",
+      "engineering lab",
+      "engineering laboratory",
+      "labo projet",
+      "atelier projet",
+      "atelier ingénierie",
+      "ingénierie",
+      "ingenierie",
+      "مختبر المشاريع الهندسية",
+      "هندسة"
+    ],
+    "description": "Espace de prototypage et de réalisation pour les projets d'ingénierie.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 44.9,
+      "longitude": 23.1
+    }
+  },
+  {
+    "location_name": "Laboratoire de Mécatronique",
+    "category": "Laboratoire",
+    "aliases": [
+      "mecatronique",
+      "mécatronique",
+      "lab mecatronique",
+      "lab mécatronique",
+      "labo mécatronique",
+      "labo mecatronique",
+      "mechatronics",
+      "mechatronics lab",
+      "robotics lab",
+      "labo robotique",
+      "automation lab",
+      "robotique",
+      "robotics",
+      "embedded systems",
+      "systèmes embarqués",
+      "مختبر الميكاترونيك",
+      "الميكاترونيك",
+      "الروبوتات"
+    ],
+    "description": "Laboratoire équipé pour les systèmes embarqués, les robots et les projets mécatroniques.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 15.5,
+      "longitude": 10
+    }
+  },
+  {
+    "location_name": "Cafétéria",
+    "category": "Alimentation",
+    "aliases": [
+      "cafeteria",
+      "cantine",
+      "repas",
+      "restauration",
+      "dining hall",
+      "food court",
+      "café",
+      "cafe",
+      "snack",
+      "snack bar",
+      "lunch",
+      "déjeuner",
+      "dejeuner",
+      "petit-déjeuner",
+      "breakfast",
+      "manger",
+      "boire",
+      "restaurant",
+      "كافتيريا",
+      "مطعم",
+      "طعام"
+    ],
+    "description": "Cafétéria principale proposant repas, boissons et pauses rapides sur le campus.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 109,
+      "longitude": 44.5
+    }
+  },
+  {
+    "location_name": "Foyer Étudiant",
+    "category": "Détente",
+    "aliases": [
+      "salon",
+      "detente",
+      "détente",
+      "repos",
+      "lounge",
+      "student lounge",
+      "hangout spot",
+      "common area",
+      "common room",
+      "espace commun",
+      "salle commune",
+      "foyer",
+      "foyer des étudiants",
+      "foyer etudiant",
+      "foyer étudiant",
+      "foyer Emines",
+      "games room",
+      "salle de jeux",
+      "قاعة الطلاب",
+      "قاعة الاستراحة",
+      "الفواي"
+    ],
+    "description": "Espace de détente et de repos pour les étudiants, avec jeux collectifs.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 74.9,
+      "longitude": 31
+    }
+  },
+  {
+    "location_name": "Bureau E-tech",
+    "category": "Clubs",
+    "aliases": [
+      "etech",
+      "e-tech",
+      "club e-tech",
+      "club etech",
+      "tech club",
+      "technologie",
+      "fabrication",
+      "fab lab",
+      "atelier",
+      "DIY",
+      "projets innovants",
+      "innovation",
+      "robotique",
+      "robotics",
+      "engineering club",
+      "نادي التقنية",
+      "نادي الهندسة",
+      "إي-تك"
+    ],
+    "description": "Bureau du club E-tech pour les activités liées à la technologie, la fabrication et les projets innovants. Le matériel de fabrication du club est disponible dans ce bureau pour les étudiants qui souhaitent travailler sur leurs projets personnels ou collaboratifs.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 9.5,
+      "longitude": 23.6
+    }
+  },
+  {
+    "location_name": "Couloir des Clubs",
+    "category": "Clubs",
+    "aliases": [
+      "clubs",
+      "couloir clubs",
+      "espace clubs",
+      "club area",
+      "clubs corridor",
+      "clubs hall",
+      "association area",
+      "associations",
+      "student clubs",
+      "all clubs",
+      "tous les clubs",
+      "نادي",
+      "النوادي",
+      "ممر النوادي"
+    ],
+    "description": "Couloir où sont regroupés les bureaux des clubs étudiants de l'EMINES.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 97.2,
+      "longitude": 45.6
+    }
+  },
+  {
+    "location_name": "Service d'Impression",
+    "category": "Services",
+    "aliases": [
+      "impression",
+      "photocopie",
+      "photocopier",
+      "print",
+      "printer",
+      "printing",
+      "printing office",
+      "Orchi",
+      "imprimante",
+      "scan",
+      "scanner",
+      "papeterie",
+      "documents",
+      "خدمة الطباعة",
+      "الطابعة",
+      "النسخ"
+    ],
+    "description": "Services d'impression, photocopies et documents pour les étudiants.",
+    "building": "Bâtiment Emines",
+    "floor": "RDC",
+    "accessible": true,
+    "coordinates": {
+      "latitude": 49.7,
+      "longitude": 20.3
+    }
+  }
+]

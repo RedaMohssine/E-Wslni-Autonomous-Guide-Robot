@@ -1,0 +1,64 @@
+slam_toolbox:
+  ros__parameters:
+    # Plugin params
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+
+    # ROS Parameters - SANS ODOM
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_footprint  # ou base_link selon votre robot
+    scan_topic: /scan
+    
+    # MODE SANS ODOMÉTRIE
+    mode: mapping
+    
+    # CRITIQUE : Publier la transformation map->odom
+    # Au lieu d'attendre odom->base_footprint
+    publish_odom_tf: false  # ← Ne pas publier odom TF
+    
+    # Queue et timeouts
+    scan_queue_size: 20
+    transform_timeout: 1.0
+    tf_buffer_duration: 30.0
+    
+    # Performance
+    map_update_interval: 2.0  # Plus fréquent sans odom
+    resolution: 0.05
+    max_laser_range: 12.0
+    minimum_time_interval: 0.2  # Plus court pour mieux tracker
+    
+    # SCAN MATCHING RENFORCÉ (CRITIQUE SANS ODOM)
+    use_scan_matching: true  # ← OBLIGATOIRE
+    use_scan_barycenter: true
+    minimum_travel_distance: 0.05  # ← Plus sensible
+    minimum_travel_heading: 0.05   # ← Plus sensible
+    scan_buffer_size: 20  # ← Plus grand buffer
+    scan_buffer_maximum_scan_distance: 10.0
+    
+    # Fine-tuning du scan matcher
+    link_match_minimum_response_fine: 0.5  # ← Plus strict
+    link_scan_maximum_distance: 2.0
+    
+    # Correlation parameters (importants pour scan matching)
+    correlation_search_space_dimension: 0.8  # ← Augmenté
+    correlation_search_space_resolution: 0.01
+    correlation_search_space_smear_deviation: 0.1
+    
+    # Loop closure (utile pour corriger la dérive)
+    do_loop_closing: true
+    loop_search_maximum_distance: 4.0
+    loop_match_minimum_chain_size: 10
+    loop_match_maximum_variance_coarse: 3.0
+    loop_match_minimum_response_coarse: 0.4
+    loop_match_minimum_response_fine: 0.5
+    
+    # Covariances (ajustez si dérive trop importante)
+    covariance_scan_matcher: 0.01  # Confiance dans scan matching
+    minimum_angle_penalty: 0.9
+    minimum_distance_penalty: 0.5
+    use_response_expansion: true

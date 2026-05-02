@@ -1,0 +1,47 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+.venv/
+venv/
+
+# Vector database (generated — run vectordb_generation.py to rebuild)
+vector_db/
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Runtime / generated data
+data/Navigation history/
+memories/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arduino build artifacts
+*.elf
+*.hex
+*.map
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Lock files (keep uv.lock, exclude heavy pip ones if needed)
+# uv.lock is intentionally kept

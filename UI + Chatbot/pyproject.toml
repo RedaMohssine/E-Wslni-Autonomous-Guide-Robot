@@ -1,0 +1,27 @@
+[project]
+name = "robot-assistant-chatbot"
+version = "0.1.0"
+description = "The UI app for the robot assistant of EMINES - class 2027"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "assemblyai>=0.52.0",
+    "chromadb>=1.5.0",
+    "dotenv>=0.9.9",
+    "langchain>=1.2.10",
+    "langchain-community>=0.4.1",
+    "langchain-openai>=1.1.9",
+    "langgraph>=1.0.4",
+    "numpy>=2.3.5",
+    "pydub>=0.25.1",
+    "pypdf>=6.7.0",
+    "requests>=2.32.5",
+    "rapidfuzz>=3.14.3",
+    "streamlit>=1.44.0",
+    "pyttsx3>=2.98",
+    "gtts>=2.5.4",
+    "langchain-chroma>=1.1.0",
+    "cartesia>=3.0.2",
+    "pymupdf>=1.27.2.2",
+    "websocket-client>=1.8.0",
+]
