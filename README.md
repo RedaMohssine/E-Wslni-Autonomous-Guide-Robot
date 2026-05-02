@@ -1,6 +1,6 @@
 # E-Wslni — Autonomous Campus Guide Robot
 
-> **E-Wslni** (وصلني) is Moroccan Darija for *"Take me there"* — an autonomous indoor guide robot developed at [EMINES School of Industrial Management, UM6P](https://www.emines-ingenieur.org/) as a 4th-year engineering capstone project.
+> **E-Wslni** (وصلني) is Moroccan Darija for *"Take me there"* — an autonomous indoor guide robot developed at [EMINES School of Industrial Management, UM6P](https://www.emines-ingenieur.org/) as a 1-year engineering capstone project.
 
 ---
 
