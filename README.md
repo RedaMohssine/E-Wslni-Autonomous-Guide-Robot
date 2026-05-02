@@ -45,7 +45,7 @@ The system is divided into four integrated layers:
 | Layer | Technology | Role |
 |-------|-----------|------|
 | **Hardware** | Arduino Mega 2560 + MPU-6050 | Low-level motor control, odometry, anomaly detection |
-| **Compute** | NIPOGI Mini PC (8 GB RAM, Ubuntu 22.04) | Runs ROS2, SLAM, Nav2, vision |
+| **Compute** | Lenovo ThinkCentre Mini PC, Ubuntu 22.04) | Runs ROS2, SLAM, Nav2, vision |
 | **Perception** | LD06 LiDAR + Logitech C920 camera | 360° 2D laser scanning + semantic obstacle detection |
 | **Mapping / Navigation** | SLAM Toolbox + Nav2 | Real-time mapping & autonomous path planning |
 | **Interface** | Streamlit + LangGraph + GPT-4o-mini | Conversational AI with voice I/O |
