@@ -77,8 +77,8 @@ The main firmware handles:
 
 | Real Robot | SolidWorks CAD Model |
 |:---:|:---:|
-| ![E-Wslni — octagonal laser-cut chassis with LD06 LiDAR and electronics box on top](images/robot%20image%20.JPG) | ![SolidWorks full-assembly render of E-Wslni showing chassis layers, wheel assembly, and electronics enclosure](images/robot%20cad%20screenshot.png) |
-| *The physical robot: octagonal laser-cut chassis, dual DC drive wheels, servo-steered front caster, and the electronics enclosure housing the LD06 LiDAR on top.* | *SolidWorks full assembly — chassis layers, motor mounts, caster wheel, LiDAR mount, and the detachable electronics box.* |
+| <img src="images/robot%20image%20.JPG" width="400" alt="E-Wslni — octagonal laser-cut chassis with LD06 LiDAR and electronics box on top"/> | <img src="images/robot%20cad%20screenshot.png" width="400" alt="SolidWorks full-assembly render of E-Wslni showing chassis layers, wheel assembly, and electronics enclosure"/> |
+| *The physical robot: octagonal laser-cut chassis, dual DC drive wheels, and the electronics enclosure housing the LD06 LiDAR on top.* | *SolidWorks full assembly — chassis layers, motor mounts, drive wheels, LiDAR mount, and the detachable electronics box.* |
 
 ---
 
@@ -314,7 +314,7 @@ The robot navigating autonomously through EMINES corridors and doorways:
 | Approaching a doorway | Crossing through |
 |:---:|:---:|
 | ![E-Wslni approaching an open doorway in an EMINES corridor, aligned by the Nav2 local planner](images/robot%20near%20to%20a%20door.png) | ![E-Wslni successfully crossing through a doorway, demonstrating narrow-passage navigation](images/robot%20crossing%20a%20door.png) |
-| *Robot approaching an open doorway — the Nav2 local planner aligns the robot with the gap while continuously replanning around the door-frame obstacle.* | *Robot threading through the doorway — demonstrating the clearance margins achieved by the DWB planner and the Ackermann steering geometry.* |
+| *Robot approaching an open doorway — the Nav2 local planner aligns the robot with the gap while continuously replanning around the door-frame obstacle.* | *Robot threading through the doorway — demonstrating the clearance margins achieved by the DWB planner and the differential drive kinematics.* |
 
 ---
 
