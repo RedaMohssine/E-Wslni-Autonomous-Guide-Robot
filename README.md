@@ -44,8 +44,9 @@ The system is divided into four integrated layers:
 
 | Layer | Technology | Role |
 |-------|-----------|------|
-| **Hardware** | Arduino Mega 2560 + MPU-6050 | Motor control, odometry, anomaly detection |
-| **Perception** | LD06 LiDAR + ROS2 driver | 360° 2D laser scanning |
+| **Hardware** | Arduino Mega 2560 + MPU-6050 | Low-level motor control, odometry, anomaly detection |
+| **Compute** | NIPOGI Mini PC (8 GB RAM, Ubuntu 22.04) | Runs ROS2, SLAM, Nav2, vision |
+| **Perception** | LD06 LiDAR + Logitech C920 camera | 360° 2D laser scanning + semantic obstacle detection |
 | **Mapping / Navigation** | SLAM Toolbox + Nav2 | Real-time mapping & autonomous path planning |
 | **Interface** | Streamlit + LangGraph + GPT-4o-mini | Conversational AI with voice I/O |
 
@@ -58,22 +59,23 @@ Communication between the chatbot (which can run on any machine) and the robot p
 ### Hardware & Firmware
 
 **File:** [`arduino.ino`](arduino.ino)  
-**Hardware:** Arduino Mega 2560, MPU-6050 IMU, 2× DC motors with quadrature encoders, servo steering, 3S LiPo battery
+**Hardware:** Arduino Mega 2560, MPU-6050 IMU, 2× DC motors with quadrature encoders, 12 V Li-ion motor battery
 
 The main firmware handles:
 
-- **Dual DC motor control** — PWM + PID with feedforward, adaptive filtering
-- **Ackermann/tricycle kinematics** — servo-steered front wheel
-- **Odometry** — quadrature encoder reading at 131:1 gear reduction, 64 CPR
+- **Differential drive control** — independent left/right DC motors, PWM + PID with feedforward, adaptive filtering
+- **Wheel geometry** — wheel radius 0.10 m, wheelbase (entraxe) 0.488 m
+- **Odometry** — quadrature encoders (64 CPR) sampled at 128 Hz; velocity published to ROS2 at 57600 baud
 - **Anomaly detection** via MPU-6050:
   - Tilt / rollover detection (gyro X/Y rates)
   - Floor bump detection (accelerometer Z deviation from baseline)
-  - Wheel-slip detection (gyro yaw vs. encoder-computed yaw divergence)
-- **Battery management** — 3S LiPo monitoring with relay safety cutoff
-- **Serial protocol** — `S<v>` (speed), `T<a>` (turn), `M<v>:<a>` (combined); telemetry at ~12.8 Hz
+  - Wheel-slip detection (gyro yaw vs. encoder-computed yaw divergence); PID gain reduced to 60 % on slip
+- **Battery management** — 12 V Li-ion monitoring with relay cutoff at 11 V (motors disconnected during charge)
+- **Angular correction loop** — PI controller (Kp=0.8, Ki=1.5) to compensate mechanical asymmetries
+- **Serial protocol** — speed + angular velocity commands; telemetry at 128 Hz
 
 **CAD Design:** [`SolidWorks CAD/`](SolidWorks%20CAD/)  
-60+ SolidWorks parts and assemblies covering the chassis, motor mounts, wheel assemblies, LiDAR bracket, electronics enclosure, steering mechanism, and battery support.
+60+ SolidWorks parts and assemblies covering the octagonal chassis (HPL 8 mm panels, steel square-tube frame), motor mounts, wheel sub-assemblies (axle + pillow-block bearings + flexible coupling), LiDAR/screen enclosure, camera support, charging port, and the automatic charging station.
 
 | Real Robot | SolidWorks CAD Model |
 |:---:|:---:|
@@ -94,7 +96,7 @@ The SLAM module builds a persistent 2D occupancy map of the campus while the ope
 | File | Role |
 |------|------|
 | `src/ldlidar_stl_ros2/` | LD06 LiDAR ROS2 driver (C++) — publishes `/scan` at 230400 baud |
-| `scripts/arduino_bridge.py` | Reads encoder ticks from Arduino, publishes `/odom` with Ackermann-corrected kinematics |
+| `scripts/arduino_bridge.py` | Reads encoder ticks from Arduino, publishes `/odom` with differential drive kinematics |
 | `scripts/keyboard_teleop.py` | AZERTY keyboard teleoperation for manual mapping runs |
 | `hardware_r/robot_control.ino` | Arduino Uno sketch used during SLAM (speed + steering protocol) |
 | `config/mapper_params_online_async.yaml` | SLAM Toolbox parameters (resolution, range, loop closure) |
@@ -104,7 +106,7 @@ The SLAM module builds a persistent 2D occupancy map of the campus while the ope
 #### TF tree
 
 ```
-map → odom → base_link → base_laser
+map → odom → base_footprint → base_link → base_laser
 ```
 
 #### Quick start
