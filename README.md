@@ -455,4 +455,4 @@ Developed at **EMINES School of Industrial Management — UM6P** (2024–2025).
 
 ---
 
-*EMINES — École Marocaine des Sciences de l'Ingénieur, Université Mohammed VI Polytechnique, Ben Guerir, Morocco.*
+*EMINES — École De Management Industriel, Université Mohammed VI Polytechnique, Ben Guerir, Morocco.*
